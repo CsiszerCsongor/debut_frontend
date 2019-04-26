@@ -1,0 +1,29 @@
+<div *ngIf="isLoggedIn;" class="whiteBackground">
+  Logged in as {{roles}}
+</div>
+
+<div *ngIf="isLoggedIn==false" class="whiteBackground">
+  <div id="loginContent">
+    <div class="md-form">
+      <input mdbInput type="text" [(ngModel)]="userCode" id="form1" class="form-control">
+      <label for="form1">User code</label>
+    </div>
+    <div class="md-form">
+      <input mdbInput type="password" [(ngModel)]="password" id="form2" class="form-control">
+      <label for="form2" class="">Password</label>
+    </div>
+  </div>
+  <div id="wrapper">
+    <div class="left">
+      <div id="forgotten" (click)="forgottenPassword()">
+        Forgotten password?
+      </div>
+    </div>
+    <div class="right">
+      <button type="button" class="btn btn-warning" (click)="login()">Login</button>
+    </div>
+    <div class="right">
+      <button type="button" class="btn btn-warning" (click)="registrationBtn()">Registration</button>
+    </div>
+  </div>
+</div>

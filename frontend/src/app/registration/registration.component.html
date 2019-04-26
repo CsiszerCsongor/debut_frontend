@@ -1,0 +1,108 @@
+<div id="whiteBackground">
+  <div id="registrationContent">
+      <div class="md-form">
+        <input mdbInput type="text" [(ngModel)]="user.firstName" id="form1" class="form-control">
+        <label for="form1">First name</label>
+      </div>
+      <div class="md-form">
+        <input mdbInput type="text" [(ngModel)]="user.lastName" id="form2" class="form-control">
+        <label for="form2">Last name</label>
+      </div>
+      <div class="md-form">
+        <input mdbInput type="text" [(ngModel)]="user.cnp" (blur)="checkCNP()" id="form9" class="form-control">
+        <label for="form9">CNP</label>
+        <mdb-error *ngIf="cnpIsUsed">CNP is used</mdb-error>
+      </div>
+      <div class="md-form" style="width:50%;">
+        <input mdbInput type="text" [(ngModel)]="user.serie" id="form10" class="form-control">
+        <label for="form10">Serie</label>
+      </div>
+      <div class="md-form" style="width:50%;">
+        <input mdbInput type="text" [(ngModel)]="user.cnpNr" id="form11" class="form-control">
+        <label for="form11">Nr.</label>
+      </div>
+      <div class="putNearNextElement">
+        <mat-form-field>
+          <mat-label>Country</mat-label>
+          <mat-select [(ngModel)]="country" (ngModelChange)="getCities()">
+            <mat-option *ngFor="let country of countries" [value]="country.id">
+              {{country.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>City</mat-label>
+          <mat-select [(ngModel)]="city">
+            <mat-option *ngFor="let city of cities" [value]="city.id">
+              {{city.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="md-form">
+        <input mdbInput type="text" [(ngModel)]="user.street" id="form6" class="form-control">
+        <label for="form6">Street</label>
+      </div>
+      <div class="md-form">
+        <input mdbInput type="text" [(ngModel)]="user.houseNumber" id="form12" class="form-control">
+        <label for="form12">House number / Block number</label>
+      </div>
+      <div class="md-form">
+        <input mdbInput type="text" [(ngModel)]="user.apartman" id="form13" class="form-control">
+        <label for="form13">Apartman</label>
+      </div>
+      <div class="md-form">
+        <input mdbInput type="text" [(ngModel)]="user.telephone" (blur)="checkTelephone()" id="form7" class="form-control">
+        <label for="form7">Telephone</label>
+        <mdb-error *ngIf="telephoneIsUsed">Telephone is used</mdb-error>
+      </div>
+      <div class="md-form">
+        <input mdbInput type="email" [(ngModel)]="user.email" (blur)="checkEmail()" id="form8" class="form-control" ngModel email>
+        <label for="form8">Email</label>
+        <mdb-error *ngIf="emailIsUsed">Email is used</mdb-error>
+        <mdb-error *ngIf="invalidEmail">Email is invalid</mdb-error>
+      </div>
+
+      <div class="md-form">
+        <input mdbInput type="password" [(ngModel)]="user.password" (blur)="checkPasswords()" id="form14" class="form-control">
+        <label for="form14" class="">Password</label>
+        <mdb-error *ngIf="passwordsIsNotSimilar">Passwords are not match</mdb-error>
+      </div>
+      <div class="md-form">
+        <input mdbInput type="password" [(ngModel)]="repeatPassword" (blur)="checkPasswords()" id="form15" class="form-control">
+        <label for="form15" class="">Repeat password</label>
+        <mdb-error *ngIf="passwordsIsNotSimilar">Passwords are not match</mdb-error>
+      </div>
+      <div class="putNearNextElement">
+        <mat-form-field>
+          <mat-label>Cont currency</mat-label>
+          <mat-select [(ngModel)]="selectedCurrency">
+            <mat-option *ngFor="let currency of currencies" [value]="currency.id">
+              {{currency.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Role</mat-label>
+          <mat-select [(ngModel)]="selectedRole">
+            <mat-option *ngFor="let role of roles" [value]="role.name">
+              {{role.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  </div>
+  <div id="wrapper">
+      <div class="right">
+          <button type="button" class="btn btn-warning" (click)="login()">Login</button>
+      </div>
+      <div class="right">
+        <button type="button" class="btn btn-warning" (click)="registrationBtn()">Registration</button>
+    </div>
+  </div>  
+</div>
+<!--appium, framework, e2e testek, unit testek-->

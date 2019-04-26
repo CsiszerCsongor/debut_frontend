@@ -1,0 +1,61 @@
+.whiteBackground{
+    width:600px;
+    height:300px;
+    background-color: white;
+    border-radius: 15px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:25px;
+    margin-top:50px;;
+    position: relative;
+    opacity: 0.8;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+#loginContent{
+    width:500px;
+    height:150px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    //border:1px solid black;
+}
+
+.btn-warning{
+    border-radius: 10px;
+}
+
+#wrapper{
+    width: 500px;
+    overflow: hidden;
+    margin-left:auto;
+    margin-right: auto;
+    //border: 1px solid black;
+}
+
+.left{
+    width:200px;
+    float:left;
+    //border: 1px solid black;
+}
+
+.right{
+    width:120px;
+    float:left;
+    //border: 1px solid red;
+}
+
+#forgotten{
+    cursor: pointer;
+    margin-top:20px;
+    color:#757575;
+    text-decoration: none;
+}
+
+#forgotten:hover{
+    cursor: pointer;
+    margin-top:20px;
+    color:#ffbb33;
+    text-decoration: underline;
+}

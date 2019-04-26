@@ -1,0 +1,31 @@
+<nav id="navbar">
+    <ul >
+      <li *ngIf="authority === 'admin'" class="navbarButton btn btn-warning" (click)="sendPage('createUser')">
+        <a>Create user</a>
+      </li>
+      <li *ngIf="authority === 'admin'" class="navbarButton btn btn-warning" (click)="sendPage('updateUser')">
+        <a>Update user</a>
+      </li>
+      <li *ngIf="authority === 'admin'" class="navbarButton btn btn-warning" (click)="sendPage('currency')">
+        <a>Currency</a>
+      </li>
+      <li *ngIf="authority === 'admin'" class="navbarButton btn btn-warning" (click)="sendPage('management')">
+        <a>Management</a>
+      </li>
+      <li *ngIf="authority === 'user'" class="navbarButton btn btn-warning" (click)="sendPage('myConts')">
+        <a>My conts</a>
+      </li>
+      <li *ngIf="authority === 'user'" class="navbarButton btn btn-warning" (click)="sendPage('transfer')">
+        <a>Transfer</a>
+      </li>
+      <li *ngIf="authority === 'user'" class="navbarButton btn btn-warning" (click)="sendPage('exchange')">
+        <a>Exchange</a>
+      </li>
+      <li *ngIf="authority === 'user'" class="navbarButton btn btn-warning" (click)="sendPage('password')">
+        <a>Password</a>
+      </li>
+      <li *ngIf="authority === 'user' || authority === 'admin'" class="navbarButton btn btn-warning" (click)="logout()">
+        <a>Logout</a>
+      </li>
+    </ul>
+</nav>

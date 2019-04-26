@@ -1,0 +1,78 @@
+#whiteBackground{
+    width:600px;
+    height:1200px;
+    background-color: white;
+    border-radius: 15px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:25px;
+    margin-top:50px;;
+    position: relative;
+    opacity: 0.8;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+#registrationContent{
+    width:500px;
+    height:1050px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+   // border:1px solid black;
+}
+
+.btn-warning{
+    border-radius: 10px;
+}
+
+#wrapper{
+    width: 500px;
+    overflow: hidden;
+    margin-left:auto;
+    margin-right: auto;
+    //border: 1px solid black;
+}
+
+
+.enableInputsNearRight{
+  //width:240px;
+  float:left;
+  //margin-right:20px;
+  border: 1px solid black;
+}
+.enableInputsNearLeft{
+  //width:240px;
+  border: 1px solid red;
+}
+
+.left{
+    width:200px;
+    float:left;
+    //border: 1px solid black;
+}
+
+.right{
+    width:120px;
+    float:left;
+    //border: 1px solid red;
+}
+
+.putNearNextElement{
+  float:left;
+  margin-right: 20px;
+}
+
+#forgotten{
+    cursor: pointer;
+    margin-top:20px;
+    color:#757575;
+    text-decoration: none;
+}
+
+#forgotten:hover{
+    cursor: pointer;
+    margin-top:20px;
+    color:#ffbb33;
+    text-decoration: underline;
+}
