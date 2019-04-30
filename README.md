@@ -1,45 +1,25 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+## A frontend részről
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+Még nincs meg sok a frontend résznél. Eddig amik megvannak:
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+1. Login oldal
+2. Regisztrációs oldal
+3. Ha admin-ként van valaki bejelentkezve, akkor az "Update user" menüpont alatti rész 
 
----
 
-## Edit a file
+**Login oldal**
+A regisztráció során vissza lesz külde a generált "user code". Ezzel lehet bejelentkezni
+A "Forgot password" gomb még nem működik
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+**Regisztrációs oldal**
+A regisztrációs oldalon a személy igazolvány adatokat a román személy igazolvány kártyáról(buletin) másoltam, és arról, hogy miket kérnek a hivatalos papírokon. Mivel megnéztem, hogy hogy néz ki a magyar személyi igazolvány, emiatt most leírom, hogy egyes mezőkbe mit kell beírni, azokba, amiket nem láttam a magyar kártyán.
 
----
+1. CNP - a személyi szám - csak számokat fogad el
+2. Serie - A megye kód. Két betűből áll.
+3. Nr. - a serie után a személyi igazolvány kártya száma
+4. Ki lehet választani a regisztrációnál, hogy milyen felhasználót akarunk létrehozni. Ezt csak azért csináltam, hogy mindenki láthassa meg a két fajta felhasználó lehetőségeit.
 
-## Create a file
 
-Next, you’ll add a new file to this repository.
-
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
-
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
-
----
-
-## Clone a repository
-
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
-
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+**Update user oldal**
+A user CNP-je által lehet keresni. Még nincs meg a user adatainak lekérése user oldalról így meg kell jegyezni a beadott user CNP-jét. A user oldalon ha helyes CNP-at adtunk be, akkor megjeleníti az adott CNP-hez tartozó user adatait. A userhez még csak új contokat lehet hozzárendelni, más adatokat még nem lehet lementeni.
