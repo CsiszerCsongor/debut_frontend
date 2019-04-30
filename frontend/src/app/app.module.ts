@@ -60,7 +60,7 @@ import { ManagementComponent } from './pages/management/management.component';
     MatFormFieldModule,
     MatSelectModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
   ],
   entryComponents: [
     MycontsComponent,

@@ -1,7 +1,199 @@
-<div class="searchInput">
-  <mat-icon style="float:left;margin-right: 10px;">person</mat-icon>
-  <div class="md-form">
-    <input mdbInput type="text" id="form1" class="form-control">
-    <label for="form1">CNP</label>
+<table>
+  <tr>
+    <td class="firstField"><mat-icon>person</mat-icon></td>
+    <td><input [(ngModel)]="searchText" type="text" placeholder="CNP" (keyup)="_keyupEvent()"></td>
+    <td class="lastField">
+      <button class="buttonDimension"  *ngIf="validSearchText" (click)="getUserByCNP()">Search</button>
+      <p class="errorMessage" *ngIf="!validSearchText">Wrong characters</p>
+    </td>
+  </tr>
+</table>
+<br><br>
+<div *ngIf="userFound">
+  <p>
+    <strong style="margin-left: 20px;">User found!</strong>
+  </p>
+
+  <div style="width:500px;float:left;">
+    <table style="float:left; margin-right:50px;">
+      <tr class="tableRow">
+        <td>First name : </td>
+        <td>
+          <input type="text" [disabled]="disableFirstNameInput" [(ngModel)]="userData.firstName"/>
+        </td>
+        <td>
+          <button class="updateButton" *ngIf="!updateFirstNameBtn" (click)="updateFirstName()">Update</button>
+          <button class="saveButton" *ngIf="updateFirstNameBtn">Save</button>
+          <button class="closeButton" *ngIf="updateFirstNameBtn" (click)="closeFirstNameUpdate()">Close</button>
+        </td>
+      </tr>
+      <tr class="tableRow">
+        <td>Last name : </td>
+        <td>
+          <input type="text" [disabled]="disableLastNameInput" [(ngModel)]="userData.lastName"/>
+        </td>
+        <td>
+          <button class="updateButton" *ngIf="!updateLastNameBtn" (click)="updateLastName()">Update</button>
+          <button class="saveButton" *ngIf="updateLastNameBtn">Save</button>
+          <button class="closeButton" *ngIf="updateLastNameBtn" (click)="closeUpdateLastName()">Close</button>
+        </td>
+      </tr>
+
+      <tr class="tableRow">
+        <td>CNP : </td>
+        <td>
+          <input type="text" [disabled]="disableCnpInput" [(ngModel)]="userData.cnp"/>
+        </td>
+        <td>
+          <button class="updateButton" *ngIf="!updateCnpBtn" (click)="updateCnp()">Update</button>
+          <button class="saveButton" *ngIf="updateCnpBtn">Save</button>
+          <button class="closeButton" *ngIf="updateCnpBtn" (click)="closeUpdateCnp()">Close</button>
+        </td>
+      </tr>
+
+      <tr class="tableRow">
+        <td>Serie name : </td>
+        <td>
+          <input type="text" [disabled]="disableSerieInput" [(ngModel)]="userData.serie"/>
+        </td>
+        <td>
+          <button class="updateButton" *ngIf="!updateSerieBtn" (click)="updateSerie()">Update</button>
+          <button class="saveButton" *ngIf="updateSerieBtn">Save</button>
+          <button class="closeButton" *ngIf="updateSerieBtn" (click)="closeUpdateSerie()">Close</button>
+        </td>
+      </tr>
+
+      <tr class="tableRow">
+        <td>CNP number : </td>
+        <td>
+          <input type="text" [disabled]="disableCnpNrInput" [(ngModel)]="userData.cnpNr"/>
+        </td>
+        <td>
+          <button class="updateButton" *ngIf="!updateCnpNrBtn" (click)="updateCnpNr()">Update</button>
+          <button class="saveButton" *ngIf="updateCnpNrBtn">Save</button>
+          <button class="closeButton" *ngIf="updateCnpNrBtn" (click)="closeUpdateCnpNr()">Close</button>
+        </td>
+      </tr>
+
+      <tr class="tableRow">
+        <td>Street : </td>
+        <td>
+          <input type="text" [disabled]="disableStreetInput" [(ngModel)]="userData.street"/>
+        </td>
+        <td>
+          <button class="updateButton" *ngIf="!updateStreetBtn" (click)="updateStreet()">Update</button>
+          <button class="saveButton" *ngIf="updateStreetBtn">Save</button>
+          <button class="closeButton" *ngIf="updateStreetBtn" (click)="closeUpdateStreet()">Close</button>
+        </td>
+      </tr>
+    </table>
   </div>
+
+  <div style="width:500px;height:362px;position:relative;float:left;">
+    <table>
+      <tr class="tableRow">
+        <td>House : </td>
+        <td>
+          <input type="text" [disabled]="disableHouseInput" [(ngModel)]="userData.houseNumber"/>
+        </td>
+        <td>
+          <button class="updateButton" *ngIf="!updateHouseBtn" (click)="updateHouse()">Update</button>
+          <button class="saveButton" *ngIf="updateHouseBtn">Save</button>
+          <button class="closeButton" *ngIf="updateHouseBtn" (click)="closeUpdateHouse()">Close</button>
+        </td>
+      </tr>
+
+      <tr class="tableRow">
+        <td>Apartman : </td>
+        <td>
+          <input type="text" [disabled]="disableApartmanInput" [(ngModel)]="userData.apartman"/>
+        </td>
+        <td>
+          <button class="updateButton" *ngIf="!updateApartmanBtn" (click)="updateApartman()">Update</button>
+          <button class="saveButton" *ngIf="updateApartmanBtn">Save</button>
+          <button class="closeButton" *ngIf="updateApartmanBtn" (click)="closeUpdateApartman()">Close</button>
+        </td>
+      </tr>
+
+      <tr class="tableRow">
+        <td>Telephone : </td>
+        <td>
+          <input type="text" [disabled]="disableTelephoneInput" [(ngModel)]="userData.telephone"/>
+        </td>
+        <td>
+          <button class="updateButton" *ngIf="!updateTelephoneBtn" (click)="updateTelephone()">Update</button>
+          <button class="saveButton" *ngIf="updateTelephoneBtn">Save</button>
+          <button class="closeButton" *ngIf="updateTelephoneBtn" (click)="closeUpdateTelephone()">Close</button>
+        </td>
+      </tr>
+
+      <tr class="tableRow">
+        <td>Email : </td>
+        <td>
+          <input type="text" [disabled]="disableEmailInput" [(ngModel)]="userData.email"/>
+        </td>
+        <td>
+          <button class="updateButton" *ngIf="!updateEmailBtn" (click)="updateEmail()">Update</button>
+          <button class="saveButton" *ngIf="updateEmailBtn">Save</button>
+          <button class="closeButton" *ngIf="updateEmailBtn" (click)="closeUpdateEmail()">Close</button>
+        </td>
+      </tr>
+
+      <tr class="tableRow">
+        <td>Username : </td>
+        <td>
+          <input type="text" [disabled]="disableUsernameInput" [(ngModel)]="userData.username"/>
+        </td>
+        <td>
+          <button class="updateButton" *ngIf="!updateUsernameBtn" (click)="updateUsername()">Update</button>
+          <button class="saveButton" *ngIf="updateUsernameBtn">Save</button>
+          <button class="closeButton" *ngIf="updateUsernameBtn" (click)="closeUpdateUsername()">Close</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="contsDiv">
+    <p class="conts">
+      <strong>Conts:</strong>
+    </p>
+    <p *ngIf="!contsExist" class="conts">
+      There are no conts!
+    </p>
+    <table>
+      <tr>
+        <th>Cont number</th>
+        <th>Currency</th>
+        <th>Balance</th>
+        <th>Max. balance</th>
+      </tr>
+      <tr *ngFor="let cont of userData.conts" style="border-bottom: 1px solid black;">
+        <td>{{cont.name}}</td>
+        <td>{{cont.currency}}</td>
+        <td>{{cont.sum}}</td>
+        <td>{{cont.maxValue}}</td>
+        <td>
+          <button class="btn btn-danger">Delete cont</button>
+        </td>
+      </tr>
+    </table>
+    <button *ngIf="!newCont" class="btn btn-success" (click)="addNewCont()">New cont</button>
+
+    <div *ngIf="newCont" class="newCont">
+      <mat-form-field>
+        <mat-label>Cont currency</mat-label>
+        <mat-select [(ngModel)]="selectedCurrency">
+          <mat-option *ngFor="let currency of currencies" [value]="currency.id">
+            {{currency.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button class="btn btn-success" (click)="createNewCont()">Create cont</button>
+      <button class="btn btn-warning" (click)="closeCreateNewCont()">Close</button>
+      <p class="errorMessage" *ngIf="currencyExist">Cont with this currency exist!</p>
+    </div>
+  </div>
+
+
 </div>

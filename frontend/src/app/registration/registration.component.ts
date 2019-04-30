@@ -27,6 +27,10 @@ export class RegistrationComponent implements OnInit {
   city: number;
   repeatPassword: string;
   selectedRole: string;
+  private registrationNotHappend = true;
+  private registrattionSuccessful = false;
+  private username: string;
+  private errorMessage: string;
 
   regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
@@ -96,12 +100,24 @@ export class RegistrationComponent implements OnInit {
                                            this.user.apartman, this.user.password, this.selectedCurrency,[this.selectedRole]);
 
         console.log('info : ' + this.info);
-        this.authService.signUp(this.info).subscribe(result => console.log(result));
+        this.authService.signUp(this.info).subscribe(result => {
+          console.log(result);
+          this.registrationNotHappend = false;
+          this.registrattionSuccessful = true;
+          console.log(JSON.stringify(result));
+          console.log(JSON.parse(JSON.stringify(result)).user.username);
+          this.username = JSON.parse(JSON.stringify(result)).user.username;
+        });
       }
     } else {
-      // kiirni, hogy helytelen adatok
+          this.registrationNotHappend = false;
+          this.registrattionSuccessful = false;
+          this.errorMessage = 'Can\'t created user. Please try again!';
     }
 
+  }
+  registrationTryAgainBtn() {
+    this.registrationNotHappend = true;
   }
 
   getCities() {

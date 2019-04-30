@@ -1,4 +1,4 @@
-<div id="whiteBackground">
+<div id="whiteBackground" *ngIf="registrationNotHappend">
   <div id="registrationContent">
       <div class="md-form">
         <input mdbInput type="text" [(ngModel)]="user.firstName" id="form1" class="form-control">
@@ -105,4 +105,27 @@
     </div>
   </div>  
 </div>
+
+<div *ngIf="!registrationNotHappend" id="whiteBackgroundResponseMessage">
+
+  <div *ngIf="registrattionSuccessful" class="responseMessageContent">
+    <h1 style="width:100%;">Registration successful!</h1>
+    <br/><br/>
+    <p style="width:100%;">Your username : <strong>{{username}}</strong></p>
+      <div class="right">
+        <button type="button" class="btn btn-warning" (click)="login()">Login</button>
+      </div>
+  </div>
+
+  <div *ngIf="!registrattionSuccessful" class="responseMessageContent">
+    <h1>Registration unsuccessful!</h1>
+    <br/><br/>
+    <p style="width:100%;">Please try again</p>
+    <div class="right">
+      <button type="button" class="btn btn-warning" (click)="registrationTryAgainBtn()">Registration</button>
+    </div>
+  </div>
+
+</div>
+
 <!--appium, framework, e2e testek, unit testek-->

@@ -22,6 +22,29 @@
    // border:1px solid black;
 }
 
+#whiteBackgroundResponseMessage{
+  width:600px;
+  height:300px;
+  background-color: white;
+  border-radius: 15px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top:25px;
+  margin-top:50px;;
+  position: relative;
+  opacity: 0.8;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.responseMessageContent{
+  width:500px;
+  height:150px;
+  margin-left:auto;
+  margin-right:auto;
+  position:relative;
+}
+
 .btn-warning{
     border-radius: 10px;
 }
