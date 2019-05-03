@@ -23,8 +23,12 @@
         </td>
         <td>
           <button class="updateButton" *ngIf="!updateFirstNameBtn" (click)="updateFirstName()">Update</button>
-          <button class="saveButton" *ngIf="updateFirstNameBtn">Save</button>
+          <button class="saveButton" *ngIf="updateFirstNameBtn" (click)="saveFirstName()">Save</button>
           <button class="closeButton" *ngIf="updateFirstNameBtn" (click)="closeFirstNameUpdate()">Close</button>
+        </td>
+        <td class="errorMessage" *ngIf="updateFirstNameError">
+          <p *ngIf="updateFirstNameServerError">Can't update first name!</p>
+          <p *ngIf="updateFirstNameInvalidError">Invalid data!</p>
         </td>
       </tr>
       <tr class="tableRow">
@@ -34,8 +38,11 @@
         </td>
         <td>
           <button class="updateButton" *ngIf="!updateLastNameBtn" (click)="updateLastName()">Update</button>
-          <button class="saveButton" *ngIf="updateLastNameBtn">Save</button>
+          <button class="saveButton" *ngIf="updateLastNameBtn" (click)="saveLastName()">Save</button>
           <button class="closeButton" *ngIf="updateLastNameBtn" (click)="closeUpdateLastName()">Close</button>
+        </td>
+        <td class="errorMessage" *ngIf="updateLastNameError">
+          Can't update last name!
         </td>
       </tr>
 
@@ -46,8 +53,11 @@
         </td>
         <td>
           <button class="updateButton" *ngIf="!updateCnpBtn" (click)="updateCnp()">Update</button>
-          <button class="saveButton" *ngIf="updateCnpBtn">Save</button>
+          <button class="saveButton" *ngIf="updateCnpBtn" (click)="saveCnp()">Save</button>
           <button class="closeButton" *ngIf="updateCnpBtn" (click)="closeUpdateCnp()">Close</button>
+        </td>
+        <td class="errorMessage" *ngIf="updateCnpError">
+          Can't update CNP!
         </td>
       </tr>
 
@@ -58,8 +68,11 @@
         </td>
         <td>
           <button class="updateButton" *ngIf="!updateSerieBtn" (click)="updateSerie()">Update</button>
-          <button class="saveButton" *ngIf="updateSerieBtn">Save</button>
+          <button class="saveButton" *ngIf="updateSerieBtn" (click)="saveSerie()">Save</button>
           <button class="closeButton" *ngIf="updateSerieBtn" (click)="closeUpdateSerie()">Close</button>
+        </td>
+        <td class="errorMessage" *ngIf="updateSerieError">
+          Can't update serie!
         </td>
       </tr>
 
@@ -70,8 +83,11 @@
         </td>
         <td>
           <button class="updateButton" *ngIf="!updateCnpNrBtn" (click)="updateCnpNr()">Update</button>
-          <button class="saveButton" *ngIf="updateCnpNrBtn">Save</button>
+          <button class="saveButton" *ngIf="updateCnpNrBtn" (click)="saveCnpNr()">Save</button>
           <button class="closeButton" *ngIf="updateCnpNrBtn" (click)="closeUpdateCnpNr()">Close</button>
+        </td>
+        <td class="errorMessage" *ngIf="updateCnpNrError">
+          Can't update CNP number!
         </td>
       </tr>
 
@@ -82,8 +98,11 @@
         </td>
         <td>
           <button class="updateButton" *ngIf="!updateStreetBtn" (click)="updateStreet()">Update</button>
-          <button class="saveButton" *ngIf="updateStreetBtn">Save</button>
+          <button class="saveButton" *ngIf="updateStreetBtn" (click)="saveStreet()">Save</button>
           <button class="closeButton" *ngIf="updateStreetBtn" (click)="closeUpdateStreet()">Close</button>
+        </td>
+        <td class="errorMessage" *ngIf="updateStreetError">
+          Can't update street!
         </td>
       </tr>
     </table>
@@ -98,8 +117,11 @@
         </td>
         <td>
           <button class="updateButton" *ngIf="!updateHouseBtn" (click)="updateHouse()">Update</button>
-          <button class="saveButton" *ngIf="updateHouseBtn">Save</button>
+          <button class="saveButton" *ngIf="updateHouseBtn" (click)="saveHouse()">Save</button>
           <button class="closeButton" *ngIf="updateHouseBtn" (click)="closeUpdateHouse()">Close</button>
+        </td>
+        <td class="errorMessage" *ngIf="updateHouseError">
+          Can't update house!
         </td>
       </tr>
 
@@ -110,8 +132,11 @@
         </td>
         <td>
           <button class="updateButton" *ngIf="!updateApartmanBtn" (click)="updateApartman()">Update</button>
-          <button class="saveButton" *ngIf="updateApartmanBtn">Save</button>
+          <button class="saveButton" *ngIf="updateApartmanBtn" (click)="saveApartman()">Save</button>
           <button class="closeButton" *ngIf="updateApartmanBtn" (click)="closeUpdateApartman()">Close</button>
+        </td>
+        <td class="errorMessage" *ngIf="updateApartmanError">
+          Can't update apartman!
         </td>
       </tr>
 
@@ -122,8 +147,11 @@
         </td>
         <td>
           <button class="updateButton" *ngIf="!updateTelephoneBtn" (click)="updateTelephone()">Update</button>
-          <button class="saveButton" *ngIf="updateTelephoneBtn">Save</button>
+          <button class="saveButton" *ngIf="updateTelephoneBtn" (click)="saveTelephone()">Save</button>
           <button class="closeButton" *ngIf="updateTelephoneBtn" (click)="closeUpdateTelephone()">Close</button>
+        </td>
+        <td class="errorMessage" *ngIf="updateTelephoneError">
+          Can't update telephone!
         </td>
       </tr>
 
@@ -134,8 +162,11 @@
         </td>
         <td>
           <button class="updateButton" *ngIf="!updateEmailBtn" (click)="updateEmail()">Update</button>
-          <button class="saveButton" *ngIf="updateEmailBtn">Save</button>
+          <button class="saveButton" *ngIf="updateEmailBtn" (click)="saveEmail()">Save</button>
           <button class="closeButton" *ngIf="updateEmailBtn" (click)="closeUpdateEmail()">Close</button>
+        </td>
+        <td class="errorMessage" *ngIf="updateEmailError">
+          Can't update email!
         </td>
       </tr>
 
@@ -146,8 +177,11 @@
         </td>
         <td>
           <button class="updateButton" *ngIf="!updateUsernameBtn" (click)="updateUsername()">Update</button>
-          <button class="saveButton" *ngIf="updateUsernameBtn">Save</button>
+          <button class="saveButton" *ngIf="updateUsernameBtn" (click)="saveUsername()">Save</button>
           <button class="closeButton" *ngIf="updateUsernameBtn" (click)="closeUpdateUsername()">Close</button>
+        </td>
+        <td class="errorMessage" *ngIf="updateUsernameError">
+          Can't update username!
         </td>
       </tr>
     </table>
@@ -173,7 +207,7 @@
         <td>{{cont.sum}}</td>
         <td>{{cont.maxValue}}</td>
         <td>
-          <button class="btn btn-danger">Delete cont</button>
+          <button class="btn btn-danger" (click)="deleteCont(cont.name)">Delete cont</button>
         </td>
       </tr>
     </table>

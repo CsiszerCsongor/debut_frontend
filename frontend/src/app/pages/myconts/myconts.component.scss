@@ -1,0 +1,29 @@
+.titleRow{
+  width:95%;
+  margin-left:20px;
+  min-height: 50px;
+}
+
+.bodyRow{
+  width:95%;
+  margin-left:20px;
+  border:1px solid red;
+}
+
+table{
+  width:95%;
+  margin-left: 20px;
+  border:1px solid black;
+}
+
+.titleRow .left{
+  width:50%;
+  float:left;
+  position: relative;
+}
+
+.titleRow .right{
+  width: 50%;
+  position: relative;
+  float:right;
+}
