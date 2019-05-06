@@ -1,6 +1,6 @@
 # A frontend részről
 
-## Angular 7 project
+## Angular 7 projekt
 
 Még sok nincs meg a frontend résznél. Eddig amik megvannak:
 
